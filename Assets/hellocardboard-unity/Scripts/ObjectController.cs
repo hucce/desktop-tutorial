@@ -86,6 +86,7 @@ public class ObjectController : MonoBehaviour
     /// </summary>
     public void OnPointerEnter()
     {
+        Manager.instance.Fire(true);
         SetMaterial(true);
     }
 
@@ -94,6 +95,7 @@ public class ObjectController : MonoBehaviour
     /// </summary>
     public void OnPointerExit()
     {
+        Manager.instance.Fire(false);
         SetMaterial(false);
     }
 

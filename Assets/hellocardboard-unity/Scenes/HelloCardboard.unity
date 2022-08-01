@@ -550,7 +550,7 @@ GameObject:
   - component: {fileID: 959308588}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1013,6 +1013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletObj: {fileID: 3977258954890280124, guid: 3a42c6bff23204048b4021ebd3017038, type: 3}
   bulletPos: {fileID: 1141956961}
+  waitSeconds: 2
 --- !u!4 &2104944528
 Transform:
   m_ObjectHideFlags: 0
