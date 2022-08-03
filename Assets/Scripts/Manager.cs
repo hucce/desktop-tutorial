@@ -19,6 +19,7 @@ public class Manager : MonoBehaviour
 
     public GameObject bulletObj;
     public GameObject bulletPos;
+    public GameObject gunParticle;
     public float waitSeconds;
     private bool shot = false;
 
@@ -32,6 +33,8 @@ public class Manager : MonoBehaviour
     {
         while(shot == true)
         {
+            gunParticle.GetComponent<ParticleSystem>().Play();
+            bulletPos.GetComponent<AudioSource>().Play();
             GameObject bullet = GameObject.Instantiate(bulletObj);
             bullet.transform.position = bulletPos.transform.position;
             yield return new WaitForSeconds(waitSeconds);
