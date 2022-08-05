@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 600
+  damage: 20
 --- !u!65 &7430144545371886082
 BoxCollider:
   m_ObjectHideFlags: 0
