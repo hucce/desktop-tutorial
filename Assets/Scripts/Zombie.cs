@@ -7,6 +7,7 @@ public class Zombie : MonoBehaviour
 {
     public float distance;
     public int zombieHP = 100;
+    public int zombieDamage;
     private Vector3 playerPos = new Vector3(0, 0, 0);
 
     // Start is called before the first frame update
@@ -25,10 +26,12 @@ public class Zombie : MonoBehaviour
             this.GetComponent<Animator>().SetTrigger("Attack");
         }
 
+        // 좀비가 죽었을 때
         if(zombieHP <= 0)
         {
             this.GetComponent<NavMeshAgent>().enabled = false;
             this.GetComponent<Animator>().SetTrigger("Dead");
+            this.GetComponent<BoxCollider>().enabled = false;
         }
     }
 
@@ -44,6 +47,9 @@ public class Zombie : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        zombieHP = zombieHP - collision.gameObject.GetComponent<Bullet>().damage;
+        if(collision.gameObject.tag == "Bullet")
+        {
+            zombieHP = zombieHP - collision.gameObject.GetComponent<Bullet>().damage;
+        }
     }
 }

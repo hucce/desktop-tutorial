@@ -21,6 +21,9 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        GameObject.Destroy(this.gameObject);
+        if(collision.gameObject.tag != "Player")
+        {
+            GameObject.Destroy(this.gameObject);
+        }
     }
 }

@@ -40,4 +40,13 @@ public class Manager : MonoBehaviour
             yield return new WaitForSeconds(waitSeconds);
         }
     }
+
+    public GameObject gameoverObj;
+    public GameObject gameoverTextObj;
+
+    public void GameOver()
+    {
+        gameoverObj.SetActive(true);
+        gameoverTextObj.SetActive(true);
+    }
 }
