@@ -8,6 +8,7 @@ public class Zombie : MonoBehaviour
     public float distance;
     public int zombieHP = 100;
     public int zombieDamage;
+    public bool zombieDead = false;
     private Vector3 playerPos = new Vector3(0, 0, 0);
 
     // Start is called before the first frame update
@@ -32,6 +33,7 @@ public class Zombie : MonoBehaviour
             this.GetComponent<NavMeshAgent>().enabled = false;
             this.GetComponent<Animator>().SetTrigger("Dead");
             this.GetComponent<BoxCollider>().enabled = false;
+            zombieDead = true;
         }
     }
 

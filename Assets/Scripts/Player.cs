@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "ZombieArm")
         {
             playerHP = playerHP - collision.transform.root.GetComponent<Zombie>().zombieDamage;
+            Manager.instance.PlayerHP(playerHP);
 
             if (playerHP <= 0)
             {
